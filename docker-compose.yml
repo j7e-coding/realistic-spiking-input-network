@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mongo:
+    image: "mongo"
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./results/mongodb:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - sacred
+
+#  sacredboard:
+#    build:
+#      context: .
+#      dockerfile: ./sacredboard.dockerfile
+#    restart: on-failure
+#    ports:
+#      - "5000:5000"
+#    networks:
+#      - sacred
+
+networks:
+  sacred:
